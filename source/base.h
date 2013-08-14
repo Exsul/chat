@@ -8,6 +8,5 @@ std::string convert( const ed::event_data &a )
 {
   if (!a.origin.PayloadSize())
     return "";
-  const ed::buffer buf = a.origin;
-  return buf;
+  return *a.origin.payload;
 }
