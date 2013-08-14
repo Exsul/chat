@@ -39,13 +39,13 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(SolutionDir)..\intermediate\$(SolutionName)\$(Configuration)</OutDir>
+    <OutDir>$(SolutionDir)..\build\$(SolutionName)\$(Configuration)</OutDir>
     <IntDir>$(SolutionDir)..\intermediate\$(SolutionName)\$(Configuration)</IntDir>
     <TargetName>$(SolutionName)_$(ProjectName)_$(Configuration)</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)..\intermediate\$(SolutionName)\$(Configuration)</OutDir>
+    <OutDir>$(SolutionDir)..\build\$(SolutionName)\$(Configuration)</OutDir>
     <IntDir>$(SolutionDir)..\intermediate\$(SolutionName)\$(Configuration)</IntDir>
     <TargetName>$(SolutionName)_$(ProjectName)_$(Configuration)</TargetName>
   </PropertyGroup>
@@ -56,6 +56,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -71,6 +72,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -86,6 +88,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\client\main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="source\base.h" />
+    <ClInclude Include="source\client\client_module.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
