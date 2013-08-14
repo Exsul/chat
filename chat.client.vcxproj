@@ -11,9 +11,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{D3E753E5-BFEF-48E0-A937-1445152919E1}</ProjectGuid>
+    <ProjectGuid>{1175597B-B892-4D45-AC22-43CB069DC1B3}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>chat</RootNamespace>
+    <RootNamespace>chatclient</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -39,9 +39,15 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)..\intermediate\$(SolutionName)\$(Configuration)</OutDir>
+    <IntDir>$(SolutionDir)..\intermediate\$(SolutionName)\$(Configuration)</IntDir>
+    <TargetName>$(SolutionName)_$(ProjectName)_$(Configuration)</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)..\intermediate\$(SolutionName)\$(Configuration)</OutDir>
+    <IntDir>$(SolutionDir)..\intermediate\$(SolutionName)\$(Configuration)</IntDir>
+    <TargetName>$(SolutionName)_$(ProjectName)_$(Configuration)</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -74,6 +80,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ed\source\ed.vcxproj">
+      <Project>{fde0911e-9089-4b5e-a8c4-c55f77d7dc5a}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source\client\main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
