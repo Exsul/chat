@@ -11,3 +11,14 @@
 *.lai
 *.la
 *.a
+
+#MSVS
+*.user
+*.ncb
+*.suo
+*.vcproj.*
+*.sdf
+*.opensdf
+ipch/*
+build/*
+intermediate/*
