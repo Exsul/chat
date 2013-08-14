@@ -1,7 +1,4 @@
-#include "../../ed/source/ed/kit/module.h"
-
-#include <string>
-#include <iostream>
+#include "../base.h"
 
 enum MY_EVENTS
 {
@@ -19,6 +16,7 @@ struct chat_server_module : public ed::module
 
     RegisterPostHandler(&chat_server_module::OnMessage, es);
   }
+
   void OnMessage( const ed::event_context<std::string> &a )
   {
     throw_assert(a.payload);
