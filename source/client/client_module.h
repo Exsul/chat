@@ -12,6 +12,7 @@ struct chat_client_module : public ed::module
     RegisterEvent(TOSTRING(CHAT_MESSAGE_EVENT), CHAT_MESSAGE_EVENT);
 
     ed::event_source_constructor es = GetSourceConstructor();
+    es.module = "CHAT_SERVER";
     es.event = CHAT_MESSAGE_EVENT;
 
     RegisterPostHandler(&chat_client_module::OnMessage, es);
